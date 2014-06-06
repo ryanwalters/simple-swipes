@@ -7,7 +7,7 @@ Detect swipes in 182 bytes (gzipped).
 - Include `swipes.js`
 - Bind to the `swipe` event
 
-        $element.on('swipe', function (event) { // *
+        $element.on('swipe', function (event) {
             switch (event.direction) {
                 case 'UP':
                     ...
@@ -20,7 +20,7 @@ Detect swipes in 182 bytes (gzipped).
             }
         });
         
-* jQuery isn't required, just used for demonstration purposes
+- Note: jQuery isn't required, just used for demonstration purposes
 
 ###Demo:
 
