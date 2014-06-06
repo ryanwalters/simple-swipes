@@ -8,16 +8,16 @@ Detect swipes in 182 bytes (gzipped).
 - Bind to the `swipe` event (e.g. `$el.on('swipe', function (event) { ... });`)
 - Then:
 
-    switch (event.direction) {
-        case 'UP':
-            ...
-        case 'RIGHT':
-            ...
-        case 'DOWN':
-            ...
-        case 'LEFT':
-            ...
-    }
+        switch (event.direction) {
+            case 'UP':
+                ...
+            case 'RIGHT':
+                ...
+            case 'DOWN':
+                ...
+            case 'LEFT':
+                ...
+        }
 
 ###Demo:
 
