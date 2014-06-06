@@ -16,102 +16,40 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a href="" class="navbar-brand">Simple Swipes</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="/simple-slideshow">Slideshow</a></li>
-            <li class="active"><a href="/simple-swipes">Swipes</a></li>
-            <li class="disabled"><a href="/simple-scroll">Scroll</a></li>
-        </ul>
-        <ul class="nav navbar-nav pull-right">
-            <li><a href="//ryanwalters.co">&mdash; by Ryan Walters</a></li>
-        </ul>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/simple-slideshow">Slideshow</a></li>
+                <li class="active"><a href="/simple-swipes">Swipes</a></li>
+                <li class="disabled"><a href="/simple-scroll">Scroll</a></li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="//ryanwalters.co">&mdash; by Ryan Walters</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <div class="container">
-    <h1>Demo <small>Swipe the boxes</small></h1>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="rw-box"></div>
-        </div>
-        <div class="col-md-3">
-            <div class="rw-box"></div>
-        </div>
-        <div class="col-md-3">
-            <div class="rw-box"></div>
-        </div>
-        <div class="col-md-3">
-            <div class="rw-box"></div>
-        </div>
-    </div>
+    <h1>Demo <small>Swipe the box</small></h1>
+    <div class="rw-box"></div>
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><!--
-<script src="//cdn.rawgit.com/ryanwalters/simple-swipes/0.1.1/src/swipes.js"></script>-->
-<script>
-    /*!
-     * Simple Swipes - v0.1.1
-     * http://ryanwalters.github.io/simple-swipes
-     *
-     * Copyright (c) 2014 Ryan Walters <shout@ryanwalters.co>
-     * Licensed under the MIT License
-     */
-    (function () {
-        if (typeof window.CustomEvent !== 'undefined') {
-            var absX,
-                    absY,
-                    startX,
-                    startY,
-                    deltaX,
-                    deltaY,
-                    timeStart,
-                    timeMax = 400,
-                    threshold = 50,
-                    swipeEvent = new CustomEvent('swipe', { // todo: implement CustomEvent polyfill
-                        detail: {},
-                        bubbles: true,
-                        cancelable: true
-                    }),
-                    direction = undefined,
-                    touchstart = function (event) {
-                        startX = event.touches[0].pageX;
-                        startY = event.touches[0].pageY;
-                        timeStart = +new Date();
-                    },
-                    touchend = function (event) {
-                        if (+new Date() - timeStart < timeMax) {
-                            deltaX = startX - event.changedTouches[0].pageX;
-                            deltaY = startY - event.changedTouches[0].pageY;
-                            absX = Math.abs(deltaX);
-                            absY = Math.abs(deltaY);
-                            if (absX >= threshold && absX > absY) {         // moving horizontally
-                                deltaX > 0 ?
-                                        direction = 'LEFT' :
-                                        direction = 'RIGHT';
-                            } else if (absY >= threshold && absY > absX) {  // moving vertically
-                                deltaY > 0 ?
-                                        direction = 'UP' :
-                                        direction = 'DOWN';
-                            }
-                        }
-                        swipeEvent.detail.direction = direction;
-                        swipeEvent.detail.target = event.target;
-                        event.target.dispatchEvent(swipeEvent);
-                    };
-            window.addEventListener('touchstart', touchstart, false);
-            window.addEventListener('touchend', touchend, false);
-        }
-    })();
-</script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdn.rawgit.com/ryanwalters/simple-swipes/0.1.2/src/swipes.js"></script>
 <script>
     $(function () {
         /* Demos! */
 
         // Swipe the boxes
         $('.rw-box').on('swipe', function (event) {
-            console.log(this, event);/*
             var $this = $(this);
             switch (event.originalEvent.detail.direction) {
                 case 'UP':
@@ -127,7 +65,7 @@
                 case 'LEFT':
                     $this.toggleClass('up down right', false).toggleClass('left', true);
                     break;
-            }*/
+            }
         });
     });
 </script>
