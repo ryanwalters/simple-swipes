@@ -1,5 +1,5 @@
 /*!
- * Simple Swipes - v0.1.1
+ * Simple Swipes - v0.1.2
  * http://ryanwalters.github.io/simple-swipes
  *
  * Copyright (c) 2014 Ryan Walters <shout@ryanwalters.co>
@@ -43,13 +43,9 @@
                             direction = 'DOWN';
                     }
                 }
-                for (var key in direction) {
-                    if (direction[key]) {
-                        swipeEvent.detail.direction = direction;
-                        swipeEvent.detail.target = event.target;
-                        event.target.dispatchEvent(swipeEvent);
-                    }
-                }
+                swipeEvent.detail.direction = direction;
+                swipeEvent.detail.target = event.target;
+                event.target.dispatchEvent(swipeEvent);
             };
         window.addEventListener('touchstart', touchstart, false);
         window.addEventListener('touchend', touchend, false);
