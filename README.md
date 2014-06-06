@@ -5,18 +5,22 @@ Detect swipes in 182 bytes (gzipped).
 ###Usage:
 
 - Include `swipes.js`
-- Bind to the `swipe` event (e.g. `$el.on('swipe', function (event) { ... });`)
+- Bind to the `swipe` event
 
-        switch (event.direction) {
-            case 'UP':
-                ...
-            case 'RIGHT':
-                ...
-            case 'DOWN':
-                ...
-            case 'LEFT':
-                ...
-        }
+        $element.on('swipe', function (event) { // *
+            switch (event.direction) {
+                case 'UP':
+                    ...
+                case 'RIGHT':
+                    ...
+                case 'DOWN':
+                    ...
+                case 'LEFT':
+                    ...
+            }
+        });
+        
+* jQuery isn't required, just used for demonstration purposes
 
 ###Demo:
 
