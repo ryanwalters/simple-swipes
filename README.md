@@ -1,4 +1,4 @@
-# Simple Swipes
+# Simple Swipes [![Build Status](https://travis-ci.org/ryanwalters/simple-swipes.svg?branch=master)](https://travis-ci.org/ryanwalters/simple-swipes)
 
 Detect swipes in 182 bytes (gzipped).
 
