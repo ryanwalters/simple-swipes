@@ -1,6 +1,9 @@
-/**
- * Fires 'swipe' event on up, down, left, and right swipes
- * @type {function}
+/*!
+ * Simple Swipes - v0.1.1
+ * http://ryanwalters.github.io/simple-swipes
+ *
+ * Copyright (c) 2014 Ryan Walters <shout@ryanwalters.co>
+ * Licensed under the MIT License
  */
 (function () {
     if (typeof window.CustomEvent !== 'undefined') {
@@ -18,12 +21,7 @@
                 bubbles: true,
                 cancelable: true
             }),
-            direction = {
-                left:   false,
-                right:  false,
-                up:     false,
-                down:   false
-            },
+            direction,
             touchstart = function (event) {
                 startX = event.touches[0].pageX;
                 startY = event.touches[0].pageY;

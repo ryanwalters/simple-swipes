@@ -1,8 +1,8 @@
 {
     "title": "Simple Swipes",
-    "description": "Detect swipes in 182 bytes",
+    "description": "Detect swipes in 171 bytes",
     "name": "simple-swipes",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": {
         "name": "Ryan Walters",
         "url": "http://ryanwalters.co"

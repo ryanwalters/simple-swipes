@@ -1,6 +1,6 @@
 # Simple Swipes [![Build Status](https://travis-ci.org/ryanwalters/simple-swipes.svg?branch=master)](https://travis-ci.org/ryanwalters/simple-swipes)
 
-Detect swipes in 182 bytes (gzipped).
+Detect swipes in 171 bytes (gzipped).
 
 ###Usage:
 
@@ -8,7 +8,7 @@ Detect swipes in 182 bytes (gzipped).
 - Bind to the `swipe` event
 
         $element.on('swipe', function (event) {
-            switch (event.direction) {
+            switch (event.detail.direction) {
                 case 'UP':
                     ...
                 case 'RIGHT':
