@@ -4,7 +4,7 @@ Detect swipes in 164 bytes (gzipped).
 
 ###Usage:
 
-- Include `swipes.js`
+- Include `swipes.js` (`bower install simple-swipes` or [download it](https://github.com/ryanwalters/simple-swipes/archive/0.1.2.zip))
 - Bind to the `swipe` event
 
         $element.on('swipe', function (event) {
